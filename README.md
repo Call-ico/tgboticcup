@@ -5,7 +5,7 @@
 
 1. **Clone the repository and navigate to the project directory:**
    ```sh
-   git clone <URL-репозитория>
+   git clone <repository-URL>
    cd tgboticcup
    ```
 
