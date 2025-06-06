@@ -7,6 +7,8 @@ from scraper import get_player_stats
 from telegram import Update
 from telegram.ext import ApplicationBuilder, MessageHandler, filters, ContextTypes
 from telebot.types import ReplyKeyboardRemove
+import html
+import logging
 
 
 
@@ -111,7 +113,10 @@ def format_stats_message(nickname: str, stats: Dict) -> str:
     for key, value in stats.items():
         if key not in excluded_keys:
             display_name = key.replace('_', ' ').title()
-            message += f"<pre><code>{display_name}: {value}</code></pre>\n"
+            message += f"<pre><code>{display_name}: {html.escape(str(value))}</code></pre>\n"
+
+
+    logging.info(message)  # <-- Выводим message в консоль для отладки
 
     return message
 

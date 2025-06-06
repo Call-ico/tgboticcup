@@ -2,6 +2,8 @@
 
 
 ## Installation
+0. ** Install packet (Debian)
+    sudo apt install pip python3.13-venv
 
 1. **Clone the repository and navigate to the project directory:**
    ```sh
@@ -15,9 +17,13 @@
    source myenv/bin/activate  # for Windows: myenv\Scripts\activate
    ```
 
-3. **Install dependencies:**
+3. **Install dependencies Python ≤3.11.:**
    ```sh
    pip install -r requirements.txt
+   ```
+   **Install dependencies Python 3.12+ :**
+   ```sh
+   pip install -r requirements-12.txt
    ```
 
 4. **Create a configuration file:**
@@ -34,7 +40,6 @@ python main.py
 
 ```sh
 python app.py
-```
 ```
 
 ## Requirements
