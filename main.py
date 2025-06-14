@@ -21,12 +21,11 @@ def start_telegram_bot():
 
         try:
             logger.info('Polling started')
-            bot.polling(none_stop=False, interval=0, timeout=30)
+            bot.polling(non_stop=False, none_stop=True, interval=0, timeout=30)
             logger.info('Polling finished normally')
-            # break
-        except KeyboardInterrupt:
-            logger.info('Polling stopped by user (Ctrl+C)')
-            break
+            logger.info('You have 5 seconds to press Ctrl+C to stop the bot, otherwise it will restart.')
+            time.sleep(5)
+            #break
         except Exception as err:
             logger.exception('Polling error: %s', err)
             logger.info('Restarting polling in 5 seconds...')
@@ -37,4 +36,9 @@ def start_telegram_bot():
 
 
 if __name__ == '__main__':
-    start_telegram_bot()
+    try:
+        start_telegram_bot()
+    except KeyboardInterrupt:
+        print('Bot stopped by user (Ctrl+C)')
+
+

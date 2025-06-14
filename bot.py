@@ -228,7 +228,9 @@ def setup_bot(token: str) -> telebot.TeleBot:
     def process_stats_request(message: Message, nickname: str):
         """Process a statistics request for a given nickname."""
         # Логируем запрос
-        logging.info(f"User {message.from_user.id} requested stats for '{nickname}'")
+        #user_info = vars(message.from_user)
+        #logging.info(f"User info: {user_info}")
+        logging.info(f"User {message.from_user.id} ( {message.from_user.first_name} {message.from_user.last_name}) requested stats for '{nickname}'")
 
         # Показываем "печатает..." пока обрабатываем запрос
         bot.send_chat_action(message.chat.id, 'typing')
