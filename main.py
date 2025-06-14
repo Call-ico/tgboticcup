@@ -23,7 +23,7 @@ def start_telegram_bot():
             logger.info('Polling started')
             bot.polling(none_stop=False, interval=0, timeout=30)
             logger.info('Polling finished normally')
-            break
+            # break
         except KeyboardInterrupt:
             logger.info('Polling stopped by user (Ctrl+C)')
             break
